@@ -4,7 +4,8 @@
 AUDIT_RULES_FILE="/etc/audit/rules.d/50-login.rules"
 
 # Add audit rules to the file
-printf '-w /var/log/lastlog -p wa -k logins
+printf '
+-w /var/log/lastlog -p wa -k logins
 -w /var/run/faillock -p wa -k logins
 ' | sudo tee -a "$AUDIT_RULES_FILE" > /dev/null
 
