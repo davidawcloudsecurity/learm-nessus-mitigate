@@ -101,7 +101,8 @@
           if [[ ! "$group" =~ $allowed_group ]]; then
             test=''
             while read -r du_id; do
-              [ "$du_id" -ge "$uid_min" ] && test=failed
+              [ -n "$uid_min" ] && [ "$du_id" -ge "$uid_min" ] && test=failed
+#              [ "$du_id" -ge "$uid_min" ] && test=failed
             done <<< "$(awk -F: '$4==""$gid"" {print $3}' /etc/passwd)"
             [ "$test" != "failed" ] && allowed_group="(root|adm|$group)"
           fi
