@@ -101,8 +101,20 @@
           if [[ ! "$group" =~ $allowed_group ]]; then
             test=''
             while read -r du_id; do
-              [ -n "$uid_min" ] && [ "$du_id" -ge "$uid_min" ] && test=failed
-#              [ "$du_id" -ge "$uid_min" ] && test=failed
+              # Check if both variables are set and non-empty
+              if [ -n "$uid_min" ] && [ -n "$du_id" ]; then
+                # Check if both variables are valid integers
+                if [[ "$uid_min" =~ ^[0-9]+$ ]] && [[ "$du_id" =~ ^[0-9]+$ ]]; then
+                  # Perform the comparison
+                  if [ "$du_id" -ge "$uid_min" ]; then
+                    test=failed
+                  fi
+                else
+                  echo "Error: One or both variables are not valid integers."
+                fi
+              else
+                  echo "Error: One or both variables are not set or empty."
+              fi
             done <<< "$(awk -F: '$4==""$gid"" {print $3}' /etc/passwd)"
             [ "$test" != "failed" ] && allowed_group="(root|adm|$group)"
           fi
