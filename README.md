@@ -13,3 +13,7 @@ https://github.com/MicrosoftDocs/Managed-Desktop/blob/public/managed-desktop/ref
 https://github.com/microsoft/defender-updatecontrols/blob/main/WindowsDefender.admx
 
 https://github.com/MicrosoftDocs/Managed-Desktop/blob/public/managed-desktop/references/windows-11-policy-settings.md
+
+(RPC)
+
+https://www.thewindowsclub.com/switch-network-printing-between-tcp-and-rpc
