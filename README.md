@@ -4,7 +4,7 @@
 https://www.microsoft.com/en-us/download/details.aspx?id=55319 (Require LGPO.zip)
 
 ## Windows admx/adml Resources
-The list here represent the key value name you can plug into the registry via regedit
+This lists represent the key value name you can plug into the registry via regedit
 
 https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-desktopappinstaller
 
