@@ -6,9 +6,7 @@
    if [ -z "$(modprobe -n -v "$l_mname" 2>&1 | grep -Pi -- 'h*modprobe:h+FATAL:h+Moduleh+$l_mnameh+noth+foundh+inh+directory')" ]; then
       # Remediate loadable
       l_loadable="$(modprobe -n -v "$l_mname")"
-      if [ "$(wc -l <<< "$l_loadable")" -gt '1' ]; then
-         l_loadable="$(grep -P -- '(^h*install|b$l_mname)b' <<< "$l_loadable")"
-      fi
+      [ "$(wc -l <<< "$l_loadable")" -gt '1' ] && l_loadable="$(grep -P -- '(^h*install|b$l_mname)b' <<< "$l_loadable")"
       if ! grep -Pq -- '^h*install /bin/(true|false)' <<< "$l_loadable"; then
          echo -e " - setting module: $l_mname to be not loadable"
          echo -e "install $l_mname /bin/false" >> "/etc/modprobe.d/$l_mname.conf"
@@ -27,4 +25,3 @@
       echo -e " - Nothing to remediate\n - Module $l_mname doesn't exist on the system"
    fi
 }
-
