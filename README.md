@@ -1,5 +1,17 @@
 # learm-nessus-mitigate
 
+## How to append rules to audit/audit.rules
+```ruby
+Creation of files in /etc/audit/audit.rules depends /etc/audit/rules.d/audit.rules
+# Display rules
+auditctl -l
+# Load rules
+augenrules --load
+# Check if 2 or less. Require restart
+auditctl -s | grep 'enabled'
+# Run Policy value to check if rule pass or fail
+```
+
 ## Compliant ToolKit for Win 10/11/2019
 https://www.microsoft.com/en-us/download/details.aspx?id=55319 (Require LGPO.zip)
 
