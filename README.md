@@ -6,7 +6,7 @@ Creation of files in /etc/audit/audit.rules depends /etc/audit/rules.d/audit.rul
 # Display rules
 auditctl -l
 # Load rules
-augenrules --load
+augenrules --load; auditctl -l; auditctl -s | grep 'enabled'
 # Check if 2 or less. Require restart
 auditctl -s | grep 'enabled'
 # Run Policy value to check if rule pass or fail (example)
