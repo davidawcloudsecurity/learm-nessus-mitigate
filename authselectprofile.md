@@ -19,7 +19,7 @@ When manual changes are performed on /etc/pam.d/password-auth or /etc/pam.d/syst
 Some unexpected changes to the configuration were detected. Use 'select' command instead.
 
 # Resolution
-##Solution 01
+## Solution 01
 
 To overwrite the changes --force parameter shall be used, using the current profile selection from the system.
 
@@ -69,7 +69,7 @@ Validate the configuration using authselect check:
 [root@server]# authselect check
 Current configuration is valid.
 ```
-Solution 02
+## Solution 02
 
 Removing the files under authselect and recreating them with authselect.
 
@@ -118,7 +118,7 @@ Root Cause
 
 This issue arises when the PAM stack files are modified manually.
 
-Diagnostic Steps
+## Diagnostic Steps
 
 Execute 'authselect check' or 'authselect apply-changes' command to diagnose.
 ```ruby
