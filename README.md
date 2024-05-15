@@ -9,6 +9,9 @@ auditctl -l
 augenrules --load; auditctl -l; auditctl -s | grep 'enabled'
 # Check if 2 or less. Require restart
 auditctl -s | grep 'enabled'
+
+sudo service auditd restart
+
 # Run Policy value to check if rule pass or fail (example)
 auditctl -l | /usr/bin/awk '(/^ *-a *always,exit/||/^ *-a *exit,always/) &&/ -F *arch=b32/ &&(/ -F *auid!=unset/||/ -F *auid!=-1/||/ -F *auid!=4294967295/) &&(/ -C *euid!=uid/||/ -C *uid!=euid/) &&/ -S *execve/ &&(/ key= *[!-~]* *$/||/ -k *[!-~]* *$/)' | /usr/bin/awk '{print} END {if (NR != 0) print "pass" ; else print "fail"}'
 
