@@ -26,6 +26,16 @@ Resource - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linu
 ```ruby
 logrotate -vf /etc/logrotate.conf
 ```
+Check your logrotate.status file to see which files rotated:
+```ruby
+cat /var/lib/logrotate/logrotate.status
+```
+Run the logrotate command manually in a debug mode and check for errors:
+```ruby
+/usr/sbin/logrotate -d /etc/logrotate.conf
+```
+Resource - https://access.redhat.com/solutions/32831
+
 ## Compliant ToolKit for Win 10/11/2019
 https://www.microsoft.com/en-us/download/details.aspx?id=55319 (Require LGPO.zip)
 
