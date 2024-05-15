@@ -1,4 +1,4 @@
-#'authselect check' or 'authselect apply-changes' command throws "[error] Unexpected changes to the configuration were detected"
+# 'authselect check' or 'authselect apply-changes' command throws "[error] Unexpected changes to the configuration were detected"
 
 Environment
 
