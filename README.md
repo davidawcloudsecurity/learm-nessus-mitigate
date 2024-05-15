@@ -17,6 +17,13 @@ auditctl -l | /usr/bin/awk '(/^ *-a *always,exit/||/^ *-a *exit,always/) &&/ -F 
 
 ```
 
+## How to setup hostname
+```ruby
+hostnamectl status
+hostnamectl set-hostname name
+```
+Resource - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/sec_configuring_host_names_using_hostnamectl
+
 ## Compliant ToolKit for Win 10/11/2019
 https://www.microsoft.com/en-us/download/details.aspx?id=55319 (Require LGPO.zip)
 
