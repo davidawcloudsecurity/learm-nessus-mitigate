@@ -53,6 +53,9 @@ sudo subscription-manager clean
 ```
 Resource - https://access.redhat.com/solutions/253273
 
+## Disable ipv6
+https://www.itzgeek.com/how-tos/linux/centos-how-tos/how-do-i-disable-ipv6-on-centos-7-rhel-7.html
+
 ## Compliant ToolKit for Win 10/11/2019
 https://www.microsoft.com/en-us/download/details.aspx?id=55319 (Require LGPO.zip)
 
