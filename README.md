@@ -1,5 +1,8 @@
 # learm-nessus-mitigate
 
+## Official scripts to mitigate from CIS
+Resource - https://workbench.cisecurity.org/sections/1594548/recommendations/2564618
+
 ## How to append rules to audit/audit.rules
 ```ruby
 Creation of files in /etc/audit/audit.rules depends /etc/audit/rules.d/audit.rules
