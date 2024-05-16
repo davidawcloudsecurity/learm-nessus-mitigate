@@ -36,6 +36,20 @@ Run the logrotate command manually in a debug mode and check for errors:
 ```
 Resource - https://access.redhat.com/solutions/32831
 
+## How to register sub manager with rhel
+```ruby
+sudo subscription-manager register --username <username> --password <password> --auto-attach
+sudo subscription-manager refresh
+sudo subscription-manager list --available --all
+```
+Un-registering a system
+```ruby
+sudo subscription-manager remove --all
+sudo subscription-manager unregister
+sudo subscription-manager clean
+```
+Resource - https://access.redhat.com/solutions/253273
+
 ## Compliant ToolKit for Win 10/11/2019
 https://www.microsoft.com/en-us/download/details.aspx?id=55319 (Require LGPO.zip)
 
