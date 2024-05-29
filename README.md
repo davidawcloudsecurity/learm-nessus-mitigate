@@ -53,6 +53,19 @@ sudo subscription-manager clean
 ```
 Resource - https://access.redhat.com/solutions/253273
 
+## How to disable sshd.service even with preset
+```ruby
+systemctl stop sshd
+systemctl disable sshd
+systemctl mask sshd
+
+or
+
+grep sshd /usr/lib/systemd/system-preset/*
+/usr/lib/systemd/system-preset/90-default.preset:disable sshd.service
+change enable to disable
+```
+
 ## Disable ipv6
 https://www.itzgeek.com/how-tos/linux/centos-how-tos/how-do-i-disable-ipv6-on-centos-7-rhel-7.html
 
