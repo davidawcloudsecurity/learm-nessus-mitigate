@@ -53,7 +53,11 @@ sudo subscription-manager clean
 ```
 Resource - https://access.redhat.com/solutions/253273
 ## How to disable icmp time response
-https://serverfault.com/questions/677084/block-icmp-timestamp-timestamp-reply-with-firewalld
+https://www.freekb.net/Article?id=2639
+```ruby
+firewall-cmd --add-icmp-block=echo-request --permanent
+firewall-cmd --reload
+```
 ## How to disable sshd.service even with preset
 ```ruby
 systemctl stop sshd
